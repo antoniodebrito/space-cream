@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-primary: hsl(233, 100%, 97%);
+    --bg-secondary: #8e9aaf;
+    --bg-texts: hsl(312, 91%, 96%);
+    --bgt-primary: #CBC0D3;
+    --bg-final: #4A4E69;
+
+    --ff-title: 'Staatliches', cursive;
+    --ff-texts: 'Palanquin', sans-serif;
+    --ff-desk: 'Roboto', sans-serif;
+
+    --ff-size: clamp(2rem, 1rem + 1vw, 2.5rem);
+}
+
+img {
+    object-fit: contain;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--ff-texts);
+    background: var(--bg-primary);
+}
+
+body::before {
+    content: "";
+    background: var(--bg-secondary);
+    width: 100%;
+    height: 31.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header {
+    max-width: 38.4rem;
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+header img {
+    margin-top: 3.2rem;
+}
+
+header h1 {
+    font-family: var(--ff-title);
+    background: var(--bgt-primary);
+    color: #fff;
+    font-size: 4rem;
+
+    padding: .8rem;
+    margin: 3.2rem 0 3rem 0;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.paragraph {
+    font-size: var(--ff-size);
+    line-height: 2rem;
+    padding-top: 1.2rem;
+    text-align: center;
+}
+
+header .paragraph { 
+    display: none;
+    font-family: var(--ff-grid);
+    color: #fff;
+}
+
+main {
+    max-width: 32rem;
+    margin: 4.4rem auto;
+    text-align: center;
+}
+
+main p {
+    color: #23053A;
+}
+
+.content {
+    margin-top: 6.3rem;
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.card{
+    position: relative;
+    transition: transform 200ms;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    color: #6d7088;
+    font-weight: 300;
+}
+
+.card h2 {
+    color: #4A4E69;
+    background: var(--bg-texts);
+    width: 11.2rem;
+    padding: 0 2.4rem;
+    font-size: 2rem;
+    font-weight: 400;
+
+    border-radius: 2rem;
+
+    position: absolute;
+    top: 2.2rem;
+    right: 1rem;
+
+}
+
+.card h2:hover {
+    background: #f3d1ec;
+}
+
+
+.card img {
+    animation: to-top 700ms 350ms backwards;
+
+}
+
+
+@keyframes to-top {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 1024px) {
+   body::before {
+    display: none;
+    overflow: hidden;
+   }
+
+   .card .on-mobi {
+    display: none;
+   }
+
+   
+   .paragraph-on-mobi {
+       display: none;
+    }
+    
+    header .paragraph-on-desk {
+        display: block;
+        font-family: var(--ff-desk);
+    }
+    
+    div#page {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 37.7rem 75%;
+     grid-template-areas: 
+     "A B"
+     "A C";
+    min-height: 100vh;
+    min-width: 100vw;
+    }
+
+    header {
+        min-width: 37.7rem;
+        grid-area: A;
+        background: var(--bg-secondary);  
+    }
+
+    header h1 {
+        width: 37.7rem;
+        align-self: center;
+    }
+
+    header .paragraph {
+        padding: 0 4rem;
+    }
+
+    main {
+        grid-area: B; 
+        max-width: fit-content;
+        margin: 0;
+        padding-left: 9rem;
+    }
+
+    .content {
+        display: grid;
+        grid-template-areas:
+        "A B C"
+        "D B E"
+        "D F E";
+    }
+
+
+
+    div.content .card:nth-child(1) {
+        grid-area: A;
+    }
+
+    div.content .card:nth-child(2) {
+        grid-area: B;
+    }
+
+    div.content .card:nth-child(3) {
+        grid-area: C;
+    }
+
+    div.content .card:nth-child(4) {
+        grid-area: D;
+    }
+
+    div.content .card:nth-child(5) {
+        grid-area: F;
+    }
+
+    div.content .card:nth-child(6) {
+        grid-area: E;
+    }
+
+    footer {
+        width: 59.2rem;
+        height: 2.8rem;
+        text-align: center;
+        grid-area: C;
+        justify-self: center;
+        font-size: 1.4rem;
+        color: var(--bg-final);
+        justify-self: center;
+        align-self: center;
+    }
+}
