@@ -129,7 +129,10 @@ main p {
 
 .card img {
     animation: to-top 700ms 350ms backwards;
+}
 
+footer {
+    display: none;
 }
 
 
@@ -233,8 +236,7 @@ main p {
     }
 
     footer {
-        width: 59.2rem;
-        height: 2.8rem;
+        display: block;
         text-align: center;
         grid-area: C;
         justify-self: center;
@@ -242,5 +244,11 @@ main p {
         color: var(--bg-final);
         justify-self: center;
         align-self: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        font-weight: 800;
+        color: black;
     }
 }
