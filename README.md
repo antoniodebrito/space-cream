@@ -1,5 +1,5 @@
 # space-cream
-Desafio de layouts responsivo com display grid, flex, medidas responsivas e variáveis de CSS
+Desafio de layouts responsivo com display grid, flex, medidas responsivas e variáveis de CSS, onde foi desenvolvido uma landing page de uma sorveteria ficticia
 
 [Rocketseat](https://www.rocketseat.com.br/) | Explorer | Stage 03
 
